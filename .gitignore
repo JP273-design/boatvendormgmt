@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# keep heavy folders out of iCloud Desktop sync
+*.nosync
+/node_modules
+/.next
+.next-dev.log
