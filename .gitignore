@@ -45,3 +45,6 @@ next-env.d.ts
 /node_modules
 /.next
 .next-dev.log
+
+# local demo database
+/.localdb

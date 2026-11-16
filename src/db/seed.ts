@@ -254,7 +254,7 @@ export async function seed(db: Db, now = new Date()) {
         amountUsd: Math.round((value * v.advancePct) / 100), dueDate: at(due),
         status: paidAt <= T ? "paid" : "pending", paidAt: paidAt <= T ? at(paidAt) : null,
       });
-      if (paidAt <= T) ev(paidAt, "PAYMENT_RELEASED", "finance", "Kavita Shah", `Advance of ${v.advancePct}% released`);
+      if (paidAt <= T) ev(paidAt, "PAYMENT_RELEASED", "finance", "Rupali Dewoolkar", `Advance of ${v.advancePct}% released`);
     }
 
     // --- production
@@ -312,7 +312,7 @@ export async function seed(db: Db, now = new Date()) {
       insp.scheduledFor = at(visit);
       insp.inspectorName = inspector;
       po.status = "QC_SCHEDULED";
-      ev(scheduledAt, "QC_SCHEDULED", "procurement", "Ananya Iyer", `QC scheduled for ${fmt(visit)} - inspector ${inspector}`);
+      ev(scheduledAt, "QC_SCHEDULED", "procurement", "Gaurav Dwivedi", `QC scheduled for ${fmt(visit)} - inspector ${inspector}`);
       if (spec.holdAt === "QC_SCHEDULED" && attempt === 1) {
         insp.scheduledFor = at(Math.max(visit, T + DAY));
         return;
@@ -449,7 +449,7 @@ export async function seed(db: Db, now = new Date()) {
     });
     if (autoPaid) {
       po.status = "PAID";
-      ev(due, "PAYMENT_RELEASED", "finance", "Kavita Shah", `Balance payment released - ${v.creditDays} days after GRN per terms`);
+      ev(due, "PAYMENT_RELEASED", "finance", "Rupali Dewoolkar", `Balance payment released - ${v.creditDays} days after GRN per terms`);
     }
   }
 

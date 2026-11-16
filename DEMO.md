@@ -11,14 +11,19 @@ node node_modules/next/dist/bin/next dev
 Open http://localhost:3000 and pick a persona. No passwords in the demo.
 
 - **Reset before every demo** - "Reset demo data" at the bottom of the persona screen. Dates are re-based to today.
-- First-time setup: copy `.env.example` to `.env.local`, fill it in, then `npm run db:setup`.
+- First-time setup on your own laptop (no accounts needed):
+  1. `npm install`
+  2. Create a file `.env.local` containing one line: `DATABASE_URL=postgres://postgres:postgres@localhost:54329/vms`
+  3. In one terminal, run `npm run db:local` and leave it open (this is the small local database).
+  4. In a second terminal, run `npm run db:setup` (creates the tables and loads sample data), then the `next dev` command above.
+  - The AI buttons (daily brief, assistant, invoice reading) need `ANTHROPIC_API_KEY=...` in `.env.local`. Everything else works without it.
 - Checks: `npm test` (28 rule tests) and `npm run typecheck`.
 
 ## 10-minute demo script
 
-1. **CEO (Sameer)** - Dashboard. Open value, value at risk, on-time %. Click *Generate today's brief*.
+1. **CEO (Gaurav)** - Dashboard. Open value, value at risk, on-time %. Click *Generate today's brief*.
 2. **Ask** (bottom right) - "Which vendor is hurting us most, and what does it cost ?"
-3. **Procurement (Ananya)** - Control tower → *At risk*. Open a Harmony PO → *Explain and suggest actions*.
+3. **Procurement (GD)** - Control tower → *At risk*. Open a Harmony PO → *Explain and suggest actions*.
 4. **Vendor (Liu Yang, PearlTone)** - *Needs me* → accept a PO with a lead time → update production → request QC.
 5. **Procurement** - schedule the inspection.
 6. **QC (Rohan)** - on a phone: open the inspection, fail one critical check with a note, sign off. Vendor sees exactly what to fix.
@@ -26,7 +31,7 @@ Open http://localhost:3000 and pick a persona. No passwords in the demo.
 8. **Documents** - on a shipped PO, download the *over-billed invoice* sample and upload it. Claude reads it, the mismatch is flagged, payment goes on hold.
 9. **Logistics (Vikram)** - Shipments board. The container stuck at Nhava Sheva is the red card.
 10. **Warehouse (Suresh)** - post GRN → PO closes in SAP → balance payment appears with its due date.
-11. **Finance (Kavita)** - Payments: 3-way match column, release or hold.
+11. **Finance (Rupali)** - Payments: 3-way match column, release or hold.
 12. **Procurement** - QC checklists → describe a new product → *Draft checklist with AI* → approve.
 
 ## Stories planted in the data

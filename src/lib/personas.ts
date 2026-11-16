@@ -17,18 +17,18 @@ export type Persona = {
 };
 
 export const STAFF: Persona[] = [
-  { id: "ceo", role: "ceo", name: "Sameer Kapoor", title: "Chief Executive Officer" },
-  { id: "csco", role: "csco", name: "Meera Krishnan", title: "Chief Supply Chain Officer" },
-  { id: "procurement", role: "procurement", name: "Ananya Iyer", title: "Procurement Manager" },
+  { id: "ceo", role: "ceo", name: "Gaurav Nayyar", title: "Chief Executive Officer" },
+  { id: "csco", role: "csco", name: "Pranjal Jain", title: "Head of Manufacturing & Supply Chain" },
+  { id: "procurement", role: "procurement", name: "Gaurav Dwivedi", title: "Head of Sourcing" },
   { id: "qc", role: "qc", name: "Rohan Mehta", title: "QC Inspector, Shenzhen" },
   { id: "logistics", role: "logistics", name: "Vikram Desai", title: "Logistics Lead" },
   { id: "warehouse", role: "warehouse", name: "Suresh Patil", title: "Warehouse Supervisor, Bhiwandi" },
-  { id: "finance", role: "finance", name: "Kavita Shah", title: "Finance Controller" },
+  { id: "finance", role: "finance", name: "Rupali Dewoolkar", title: "Finance - Vendor Payments" },
 ];
 
 export const ROLE_LABEL: Record<Role, string> = {
   ceo: "CEO",
-  csco: "CSCO",
+  csco: "Head, Mfg & Supply Chain",
   procurement: "Procurement",
   vendor: "Vendor",
   qc: "QC",
